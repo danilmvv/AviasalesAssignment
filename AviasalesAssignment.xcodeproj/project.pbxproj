@@ -41,6 +41,7 @@
 		3C6CEFBB2C8B282A00EB0730 /* FlightListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListView.swift; sourceTree = "<group>"; };
 		3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCard.swift; sourceTree = "<group>"; };
 		3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListViewModel.swift; sourceTree = "<group>"; };
+		3C6CEFC42C8B42A000EB0730 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				3C6CEF912C8A049600EB0730 /* AviasalesAssignment */,
+				3C6CEFC42C8B42A000EB0730 /* .gitignore */,
 				3C6CEF902C8A049600EB0730 /* Products */,
 			);
 			sourceTree = "<group>";
