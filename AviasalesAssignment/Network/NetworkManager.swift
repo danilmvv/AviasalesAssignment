@@ -7,10 +7,13 @@ final class NetworkManager {
         self.baseUrl = baseUrl
     }
     
-    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
+    func request<T: Decodable>(_ endpoint: Endpoint, responseType: T.Type) async throws -> T {
         let request = try endpoint.createURLRequest(baseURL: baseUrl)
+        print("Request: \(request)")
         
         let (data, response) = try await URLSession.shared.data(for: request)
+        
+        print("Data: \(String(data: data, encoding: String.Encoding.utf8)!)")
         
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.unknown
@@ -19,7 +22,7 @@ final class NetworkManager {
         switch httpResponse.statusCode {
         case 200...299:
             do {
-                let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                let decodedResponse = try JSONDecoder().decode(responseType, from: data)
                 return decodedResponse
             } catch {
                 throw error

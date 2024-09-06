@@ -9,7 +9,7 @@ protocol Endpoint {
 
 extension Endpoint {
     func createURLRequest(baseURL: URL) throws -> URLRequest {
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else {
+        guard var urlComponents = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
             throw NetworkError.badURL
         }
         

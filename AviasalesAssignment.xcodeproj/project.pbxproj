@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C6CEF932C8A049600EB0730 /* AviasalesAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEF922C8A049600EB0730 /* AviasalesAssignmentApp.swift */; };
-		3C6CEF952C8A049600EB0730 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEF942C8A049600EB0730 /* ContentView.swift */; };
 		3C6CEF972C8A049900EB0730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CEF962C8A049900EB0730 /* Assets.xcassets */; };
 		3C6CEF9A2C8A049900EB0730 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CEF992C8A049900EB0730 /* Preview Assets.xcassets */; };
 		3C6CEFA52C8B108100EB0730 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFA42C8B108100EB0730 /* NetworkError.swift */; };
@@ -19,12 +18,15 @@
 		3C6CEFB02C8B20E200EB0730 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFAF2C8B20E200EB0730 /* City.swift */; };
 		3C6CEFB22C8B20F200EB0730 /* FlightResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFB12C8B20F200EB0730 /* FlightResult.swift */; };
 		3C6CEFB42C8B20FB00EB0730 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFB32C8B20FB00EB0730 /* Price.swift */; };
+		3C6CEFB82C8B22D600EB0730 /* FlightSearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFB72C8B22D600EB0730 /* FlightSearchEndpoint.swift */; };
+		3C6CEFBC2C8B282A00EB0730 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFBB2C8B282A00EB0730 /* FlightListView.swift */; };
+		3C6CEFBF2C8B293C00EB0730 /* FlightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */; };
+		3C6CEFC12C8B294D00EB0730 /* FlightListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C6CEF8F2C8A049600EB0730 /* AviasalesAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviasalesAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6CEF922C8A049600EB0730 /* AviasalesAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviasalesAssignmentApp.swift; sourceTree = "<group>"; };
-		3C6CEF942C8A049600EB0730 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C6CEF962C8A049900EB0730 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C6CEF992C8A049900EB0730 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C6CEFA42C8B108100EB0730 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -35,6 +37,10 @@
 		3C6CEFAF2C8B20E200EB0730 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3C6CEFB12C8B20F200EB0730 /* FlightResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightResult.swift; sourceTree = "<group>"; };
 		3C6CEFB32C8B20FB00EB0730 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		3C6CEFB72C8B22D600EB0730 /* FlightSearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchEndpoint.swift; sourceTree = "<group>"; };
+		3C6CEFBB2C8B282A00EB0730 /* FlightListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListView.swift; sourceTree = "<group>"; };
+		3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCard.swift; sourceTree = "<group>"; };
+		3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +73,12 @@
 		3C6CEF912C8A049600EB0730 /* AviasalesAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				3C6CEFA32C8B106700EB0730 /* Network */,
-				3C6CEFA02C8A0D7F00EB0730 /* View */,
-				3C6CEFAC2C8B1F6A00EB0730 /* Model */,
 				3C6CEF922C8A049600EB0730 /* AviasalesAssignmentApp.swift */,
-				3C6CEF962C8A049900EB0730 /* Assets.xcassets */,
-				3C6CEF982C8A049900EB0730 /* Preview Content */,
+				3C6CEFAC2C8B1F6A00EB0730 /* Model */,
+				3C6CEFA02C8A0D7F00EB0730 /* View */,
+				3C6CEFB92C8B247600EB0730 /* ViewModel */,
+				3C6CEFA32C8B106700EB0730 /* Network */,
+				3C6CEFBA2C8B249800EB0730 /* Resources */,
 			);
 			path = AviasalesAssignment;
 			sourceTree = "<group>";
@@ -88,7 +94,8 @@
 		3C6CEFA02C8A0D7F00EB0730 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3C6CEF942C8A049600EB0730 /* ContentView.swift */,
+				3C6CEFBB2C8B282A00EB0730 /* FlightListView.swift */,
+				3C6CEFBD2C8B283C00EB0730 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,9 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				3C6CEFAA2C8B137300EB0730 /* NetworkManager.swift */,
-				3C6CEFA82C8B11AE00EB0730 /* Endpoint.swift */,
 				3C6CEFA62C8B116600EB0730 /* HTTPMethod.swift */,
 				3C6CEFA42C8B108100EB0730 /* NetworkError.swift */,
+				3C6CEFB62C8B22B700EB0730 /* Endpoints */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -113,6 +120,40 @@
 				3C6CEFB32C8B20FB00EB0730 /* Price.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3C6CEFB62C8B22B700EB0730 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CEFA82C8B11AE00EB0730 /* Endpoint.swift */,
+				3C6CEFB72C8B22D600EB0730 /* FlightSearchEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		3C6CEFB92C8B247600EB0730 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3C6CEFBA2C8B249800EB0730 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CEF962C8A049900EB0730 /* Assets.xcassets */,
+				3C6CEF982C8A049900EB0730 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3C6CEFBD2C8B283C00EB0730 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,10 +229,13 @@
 				3C6CEFAE2C8B1F7F00EB0730 /* SearchResponse.swift in Sources */,
 				3C6CEFAB2C8B137300EB0730 /* NetworkManager.swift in Sources */,
 				3C6CEFA72C8B116600EB0730 /* HTTPMethod.swift in Sources */,
+				3C6CEFBF2C8B293C00EB0730 /* FlightCard.swift in Sources */,
+				3C6CEFC12C8B294D00EB0730 /* FlightListViewModel.swift in Sources */,
+				3C6CEFB82C8B22D600EB0730 /* FlightSearchEndpoint.swift in Sources */,
 				3C6CEFB42C8B20FB00EB0730 /* Price.swift in Sources */,
 				3C6CEFA52C8B108100EB0730 /* NetworkError.swift in Sources */,
 				3C6CEFB22C8B20F200EB0730 /* FlightResult.swift in Sources */,
-				3C6CEF952C8A049600EB0730 /* ContentView.swift in Sources */,
+				3C6CEFBC2C8B282A00EB0730 /* FlightListView.swift in Sources */,
 				3C6CEF932C8A049600EB0730 /* AviasalesAssignmentApp.swift in Sources */,
 				3C6CEFB02C8B20E200EB0730 /* City.swift in Sources */,
 				3C6CEFA92C8B11AE00EB0730 /* Endpoint.swift in Sources */,
@@ -327,7 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AviasalesAssignment/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AviasalesAssignment/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4766WZNPKP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -357,7 +401,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AviasalesAssignment/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AviasalesAssignment/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 4766WZNPKP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
