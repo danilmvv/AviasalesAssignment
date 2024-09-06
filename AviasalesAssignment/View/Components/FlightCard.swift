@@ -2,28 +2,23 @@ import SwiftUI
 
 struct FlightCard: View {
     let flight: FlightResult
+    let itinerary: [City]
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             HStack {
-                Text("\(Int(flight.price.value)) \(flight.price.currency)")
+                Text("\(flight.price.formatted)")
                 Spacer()
                 Text(flight.airline)
             }
             
             VStack {
-                HStack {
-                    Spacer()
-                    Text(flight.departure)
-                }
-                
-                HStack {
-                    Spacer()
-                    Text(flight.arrival)
-                }
+                ItineraryRow(city: itinerary[0], dateString: flight.departure)
+                ItineraryRow(city: itinerary[1], dateString: flight.arrival)
             }
         }
-        .padding()
+        .padding(16)
+//        .background(Color.red)
     }
 }
 
@@ -31,11 +26,16 @@ struct FlightCard: View {
     FlightCard(
         flight: FlightResult(
             id: "123",
-            departure: "12:55; 3 сен, пн",
-            arrival: "15:10; 3 сен, пн",
-            price: Price(currency: "₽", value: 17830),
+            departure: "2023-09-03 20:25",
+            arrival: "2023-09-03 21:45",
+            price: Price(currency: "RUB", value: 17830),
             airline: "Аэрофлот",
             availableTicketsCount: 9
-        )
+        ),
+        
+        itinerary: [
+            City(iata: "MOW", name: "Москва"),
+            City(iata: "LED", name: "Санкт-Петербург")
+        ]
     )
 }

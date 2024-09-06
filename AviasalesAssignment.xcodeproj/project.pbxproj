@@ -22,6 +22,8 @@
 		3C6CEFBC2C8B282A00EB0730 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFBB2C8B282A00EB0730 /* FlightListView.swift */; };
 		3C6CEFBF2C8B293C00EB0730 /* FlightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */; };
 		3C6CEFC12C8B294D00EB0730 /* FlightListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */; };
+		3C6CEFCA2C8B694D00EB0730 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFC92C8B694D00EB0730 /* Date+Formatting.swift */; };
+		3C6CEFCE2C8B74E300EB0730 /* ItineraryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCard.swift; sourceTree = "<group>"; };
 		3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListViewModel.swift; sourceTree = "<group>"; };
 		3C6CEFC42C8B42A000EB0730 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3C6CEFC92C8B694D00EB0730 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				3C6CEFA02C8A0D7F00EB0730 /* View */,
 				3C6CEFB92C8B247600EB0730 /* ViewModel */,
 				3C6CEFA32C8B106700EB0730 /* Network */,
+				3C6CEFC52C8B50D800EB0730 /* Extensions */,
 				3C6CEFBA2C8B249800EB0730 /* Resources */,
 			);
 			path = AviasalesAssignment;
@@ -154,8 +159,17 @@
 			isa = PBXGroup;
 			children = (
 				3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */,
+				3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		3C6CEFC52C8B50D800EB0730 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CEFC92C8B694D00EB0730 /* Date+Formatting.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,8 @@
 				3C6CEFB82C8B22D600EB0730 /* FlightSearchEndpoint.swift in Sources */,
 				3C6CEFB42C8B20FB00EB0730 /* Price.swift in Sources */,
 				3C6CEFA52C8B108100EB0730 /* NetworkError.swift in Sources */,
+				3C6CEFCA2C8B694D00EB0730 /* Date+Formatting.swift in Sources */,
+				3C6CEFCE2C8B74E300EB0730 /* ItineraryRow.swift in Sources */,
 				3C6CEFB22C8B20F200EB0730 /* FlightResult.swift in Sources */,
 				3C6CEFBC2C8B282A00EB0730 /* FlightListView.swift in Sources */,
 				3C6CEF932C8A049600EB0730 /* AviasalesAssignmentApp.swift in Sources */,
