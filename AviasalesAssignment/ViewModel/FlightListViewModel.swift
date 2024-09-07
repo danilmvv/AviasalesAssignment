@@ -7,6 +7,7 @@ class FlightListViewModel: ObservableObject {
     @Published var origin: City = City(iata: "MOW", name: "Москва")
     @Published var destination: City = City(iata: "LED", name: "Санкт-Петербург")
     @Published var flights = [FlightResult]()
+    @Published var cheapestFlightID: String?
     
     @Published var isLoading = false
     @Published var errorMessage: String?
@@ -30,8 +31,8 @@ class FlightListViewModel: ObservableObject {
             self.departureDate = response.results.first?.departure ?? ""
             self.origin = response.origin
             self.destination = response.destination
-            self.flights = response.results
-            
+            self.flights = response.results.sorted { $0.price.value < $1.price.value }
+            self.cheapestFlightID = self.flights.first?.id
         } catch {
             errorMessage = error.localizedDescription
         }

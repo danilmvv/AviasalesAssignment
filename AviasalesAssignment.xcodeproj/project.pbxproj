@@ -27,6 +27,7 @@
 		3C6CEFD62C8BB4E400EB0730 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD52C8BB4E400EB0730 /* AppColor.swift */; };
 		3C6CEFD82C8BB52B00EB0730 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD72C8BB52B00EB0730 /* AppFont.swift */; };
 		3C6CEFDA2C8BB77600EB0730 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD92C8BB77600EB0730 /* AppIcon.swift */; };
+		3C6CEFDC2C8C499900EB0730 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFDB2C8C499900EB0730 /* Badge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3C6CEFD52C8BB4E400EB0730 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		3C6CEFD72C8BB52B00EB0730 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		3C6CEFD92C8BB77600EB0730 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		3C6CEFDB2C8C499900EB0730 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				3C6CEFBE2C8B293C00EB0730 /* FlightCard.swift */,
 				3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */,
+				3C6CEFDB2C8C499900EB0730 /* Badge.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				3C6CEF932C8A049600EB0730 /* AviasalesAssignmentApp.swift in Sources */,
 				3C6CEFB02C8B20E200EB0730 /* City.swift in Sources */,
 				3C6CEFA92C8B11AE00EB0730 /* Endpoint.swift in Sources */,
+				3C6CEFDC2C8C499900EB0730 /* Badge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

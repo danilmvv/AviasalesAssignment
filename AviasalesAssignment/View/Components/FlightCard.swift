@@ -3,29 +3,39 @@ import SwiftUI
 struct FlightCard: View {
     let flight: FlightResult
     let itinerary: [City]
+    let isCheapest: Bool
     
     var body: some View {
-        VStack(spacing: 12) {
-            HStack {
-                Text("\(flight.price.formatted)")
-                    .font(AppFont.title)
-                    .foregroundStyle(AppColor.accentColor)
-                Spacer()
-                AppIcon.airlineLogo(for: flight.airline)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 26, height: 26)
-            }
-//            .frame(maxHeight: 26)
-            
+        ZStack(alignment: .topLeading) {
             VStack(spacing: 12) {
-                ItineraryRow(city: itinerary[0], dateString: flight.departure)
-                ItineraryRow(city: itinerary[1], dateString: flight.arrival)
+                HStack {
+                    Text("\(flight.price.formatted)")
+                        .font(AppFont.title)
+                        .foregroundStyle(AppColor.accentColor)
+                    Spacer()
+                    AppIcon.airlineLogo(for: flight.airline)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 26, height: 26)
+                }
+                //            .frame(maxHeight: 26)
+                
+                VStack(spacing: 12) {
+                    ItineraryRow(city: itinerary[0], dateString: flight.departure)
+                    ItineraryRow(city: itinerary[1], dateString: flight.arrival)
+                }
+            }
+            .padding(16)
+            .background(AppColor.cardBackground)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            if isCheapest {
+                Badge(text: "Самый дешёвый")
+                    .frame(height: 20)
+                    .offset(x: 8, y: -10)
             }
         }
-        .padding(16)
-        .background(AppColor.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.top, isCheapest ? 16 : 0)
     }
 }
 
@@ -46,7 +56,9 @@ struct FlightCard: View {
             itinerary: [
                 City(iata: "MOW", name: "Москва"),
                 City(iata: "LED", name: "Санкт-Петербург")
-            ]
+            ],
+            isCheapest: true
         )
+        .padding(.horizontal, 16)
     }
 }

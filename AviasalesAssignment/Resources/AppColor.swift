@@ -9,6 +9,7 @@ enum AppColor {
     // Text
     static let textPrimary = Color("TextPrimary")
     static let textSecondary = Color("TextSecondary")
+    static let textButton = Color("TextButton")
     
     // Accents
     static let accentColor = Color("AccentColor")

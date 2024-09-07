@@ -13,14 +13,15 @@ struct FlightListView: View {
                 AppColor.appBackground.ignoresSafeArea()
                 
                 ScrollView {
-                    LazyVStack(spacing: 12) {
+                    VStack(spacing: 12) {
                         ForEach(viewModel.flights, id: \.id) { flight in
                             FlightCard(
                                 flight: flight,
                                 itinerary: [
                                     viewModel.origin,
                                     viewModel.destination
-                                ]
+                                ],
+                                isCheapest: flight.id == viewModel.cheapestFlightID
                             )
                             .padding(.horizontal, 16)
                         }
