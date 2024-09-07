@@ -16,4 +16,7 @@ enum AppColor {
     static let appGreen = Color("AppGreen")
     static let appRed = Color("AppRed")
     static let appOrange = Color("AppOrange")
+    
+    // Other
+    static let buttonShadow = Color("ButtonShadow")
 }

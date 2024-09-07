@@ -35,6 +35,14 @@ struct FlightDetailView: View {
                     .padding(16)
                 
                 Spacer()
+                
+                BuyButton(title: "Купить билет за \(viewModel.flight.price.formatted)") {
+                    viewModel.buyFlight()
+                }
+                .padding(8)
+            }
+            .alert("Билет куплен за \(viewModel.flight.price.formatted)", isPresented: $viewModel.showAlert) {
+                Button("Отлично") { }
             }
         }
     }
