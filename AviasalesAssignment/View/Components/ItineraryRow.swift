@@ -6,29 +6,36 @@ struct ItineraryRow: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text(city.name)
-                
-                Spacer()
-                
-                if let date = Date(from: dateString) {
-                    Text(date.timeOnly)
-                }
-            }
-            .font(AppFont.headline)
-            
-            HStack {
-                Text(city.iata)
-                
-                Spacer()
-                
-                if let date = Date(from: dateString) {
-                    Text(date.dayWeekday)
-                }
-            }
-            .font(AppFont.body)
-            .foregroundColor(AppColor.textSecondary)
+            topRow
+            bottomRow
         }
+    }
+    
+    private var topRow: some View {
+        HStack {
+            Text(city.name)
+            
+            Spacer()
+            
+            if let date = Date(from: dateString) {
+                Text(date.timeOnly)
+            }
+        }
+        .font(AppFont.headline)
+    }
+    
+    private var bottomRow: some View {
+        HStack {
+            Text(city.iata)
+            
+            Spacer()
+            
+            if let date = Date(from: dateString) {
+                Text(date.dayWeekday)
+            }
+        }
+        .font(AppFont.body)
+        .foregroundColor(AppColor.textSecondary)
     }
 }
 

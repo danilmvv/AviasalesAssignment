@@ -12,39 +12,52 @@ struct FlightDetailView: View {
     }
     
     var body: some View {
-        
         ZStack {
             AppColor.appBackground.ignoresSafeArea()
             VStack(spacing: 0) {
-                VStack(spacing: 4) {
-                    Text("\(viewModel.flight.price.formatted)")
-                        .font(AppFont.largeTitle)
-                    Text("Лучшая цена за \(viewModel.flight.passengerCount) чел")
-                        .font(AppFont.body)
-                }
-                .padding(.bottom, 32)
-                
-                HStack {
-                    Text("\(viewModel.flight.itinerary[0].name) — \(viewModel.flight.itinerary[1].name)")
-                        .font(AppFont.flightTitle)
-                    Spacer()
-                }
-                .padding(.horizontal, 16)
-                
-                FlightDetailCard(flight: viewModel.flight)
-                    .padding(16)
+                price
+                flightTitle
+                flightCard
                 
                 Spacer()
                 
-                BuyButton(title: "Купить билет за \(viewModel.flight.price.formatted)") {
-                    viewModel.buyFlight()
-                }
-                .padding(8)
+                buyButton
             }
             .alert("Билет куплен за \(viewModel.flight.price.formatted)", isPresented: $viewModel.showAlert) {
                 Button("Отлично") { }
             }
         }
+    }
+    
+    private var price: some View {
+        VStack(spacing: 4) {
+            Text("\(viewModel.flight.price.formatted)")
+                .font(AppFont.largeTitle)
+            Text("Лучшая цена за \(viewModel.flight.passengerCount) чел")
+                .font(AppFont.body)
+        }
+        .padding(.bottom, 32)
+    }
+    
+    private var flightTitle: some View {
+        HStack {
+            Text("\(viewModel.flight.itinerary[0].name) — \(viewModel.flight.itinerary[1].name)")
+                .font(AppFont.flightTitle)
+            Spacer()
+        }
+        .padding(.horizontal, 16)
+    }
+    
+    private var flightCard: some View {
+        FlightDetailCard(flight: viewModel.flight)
+            .padding(16)
+    }
+    
+    private var buyButton: some View {
+        BuyButton(title: "Купить билет за \(viewModel.flight.price.formatted)") {
+            viewModel.buyFlight()
+        }
+        .padding(8)
     }
 }
 

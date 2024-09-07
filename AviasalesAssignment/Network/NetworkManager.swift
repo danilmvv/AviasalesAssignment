@@ -9,7 +9,6 @@ final class NetworkManager {
     
     func request<T: Decodable>(_ endpoint: Endpoint, responseType: T.Type) async throws -> T {
         let request = try endpoint.createURLRequest(baseURL: baseUrl)
-        print("Request: \(request)")
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
