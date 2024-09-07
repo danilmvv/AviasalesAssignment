@@ -5,6 +5,7 @@ enum AppColor {
     // Backgrounds
     static let appBackground = Color("AppBackground")
     static let cardBackground = Color("CardBackground")
+    static let loaderBackground = Color("LoaderBackground")
     
     // Text
     static let textPrimary = Color("TextPrimary")

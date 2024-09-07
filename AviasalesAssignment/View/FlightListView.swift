@@ -12,6 +12,14 @@ struct FlightListView: View {
             ZStack {
                 AppColor.appBackground.ignoresSafeArea()
                 
+                if viewModel.isLoading && viewModel.flights.isEmpty {
+                    loader
+                }
+                
+                if viewModel.errorMessage != nil {
+                    retry
+                }
+                
                 flightList
             }
             .navigationTitle("Все билеты")
@@ -31,9 +39,11 @@ struct FlightListView: View {
     
     private var header: some View {
         VStack {
-            Text("\(viewModel.origin.name) — \(viewModel.destination.name)")
-                .font(AppFont.headline)
-                .foregroundStyle(AppColor.textPrimary)
+            if !viewModel.isLoading && viewModel.errorMessage == nil {
+                Text("\(viewModel.origin.name) — \(viewModel.destination.name)")
+                    .font(AppFont.headline)
+                    .foregroundStyle(AppColor.textPrimary)
+            }
             if let departureDate = Date(from: viewModel.departureDate) {
                 Text("\(departureDate.dayMonth), \(viewModel.passengerCount) чел")
                     .font(AppFont.subheadline)
@@ -67,8 +77,40 @@ struct FlightListView: View {
             FlightDetailView(flight: flight)
         }
     }
+    
+    private var loader: some View {
+        VStack {
+            CustomLoader()
+        }
+    }
+    
+    private var retry: some View {
+        VStack(alignment: .center, spacing: 12) {
+            Text("Что-то пошло не так :(")
+                .font(AppFont.title)
+                .foregroundStyle(AppColor.textPrimary)
+            
+            Text("Проверьте свое интернет соединение и попробуйте еще раз")
+                .font(.caption)
+                .foregroundStyle(AppColor.textSecondary)
+            
+            ActionButton(title: "Повторить") {
+                Task {
+                    await viewModel.fetchFlights()
+                }
+            }
+            .padding(.top)
+        }
+        .multilineTextAlignment(.center)
+        .padding()
+    }
 }
 
 #Preview {
     FlightListView(networkManager: NetworkManager(baseUrl: URL(string: "https://nu.vsepoka.ru/api")!))
+}
+
+// Ошибка
+#Preview {
+    FlightListView(networkManager: NetworkManager(baseUrl: URL(string: "https://nu.vsepoka.ru/")!))
 }

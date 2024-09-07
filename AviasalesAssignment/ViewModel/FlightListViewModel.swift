@@ -4,8 +4,8 @@ import Foundation
 class FlightListViewModel: ObservableObject {
     @Published var passengerCount: Int = 0
     @Published var departureDate: String = ""
-    @Published var origin: City = City(iata: "MOW", name: "Москва")
-    @Published var destination: City = City(iata: "LED", name: "Санкт-Петербург")
+    @Published var origin: City = City(iata: "", name: "")
+    @Published var destination: City = City(iata: "", name: "")
     @Published var flights = [FlightResult]()
     @Published var cheapestFlightID: String?
     

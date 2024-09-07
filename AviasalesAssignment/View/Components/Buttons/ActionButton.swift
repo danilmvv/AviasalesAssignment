@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct BuyButton: View {
+struct ActionButton: View {
     let title: String
     let action: () -> Void
+    
     var body: some View {
         Button {
             action()
@@ -10,15 +11,12 @@ struct BuyButton: View {
             Text(title)
                 .font(AppFont.button)
                 .foregroundStyle(AppColor.textButton)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 14)
+                .padding(12)
                 .frame(maxWidth: .infinity)
                 .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(AppColor.appOrange)
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(AppColor.accentColor)
                 }
-                .shadow(color: AppColor.buttonShadow, radius: 16, x: 0, y: 8)
-            
         }
     }
 }
@@ -27,9 +25,7 @@ struct BuyButton: View {
     ZStack {
         AppColor.appBackground.ignoresSafeArea()
         
-        BuyButton(title: "Купить билет за 17 830 ₽") {
-            //
-        }
-        .padding(8)
+        ActionButton(title: "Повторить") { }
+            .padding()
     }
 }
