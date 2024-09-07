@@ -8,17 +8,27 @@ struct FlightCard: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack(spacing: 12) {
-                HStack {
-                    Text("\(flight.price.formatted)")
-                        .font(AppFont.title)
-                        .foregroundStyle(AppColor.accentColor)
-                    Spacer()
-                    AppIcon.airlineLogo(for: flight.airline)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
+                VStack(spacing: 2) {
+                    HStack {
+                        Text("\(flight.price.formatted)")
+                            .font(AppFont.title)
+                            .foregroundStyle(AppColor.accentColor)
+                        Spacer()
+                        AppIcon.airlineLogo(for: flight.airline)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 26, height: 26)
+                    }
+                    
+                    HStack {
+                        if flight.availableTicketsCount < 10 {
+                            Text("Осталось \(flight.availableTicketsCount) билетов по этой цене")
+                                .font(AppFont.body)
+                                .foregroundStyle(AppColor.appRed)
+                        }
+                        Spacer()
+                    }
                 }
-                //            .frame(maxHeight: 26)
                 
                 VStack(spacing: 12) {
                     ItineraryRow(city: itinerary[0], dateString: flight.departure)
@@ -41,7 +51,7 @@ struct FlightCard: View {
 
 #Preview {
     ZStack {
-        AppColor.accentColor
+        AppColor.accentColor.ignoresSafeArea()
         
         FlightCard(
             flight: FlightResult(
