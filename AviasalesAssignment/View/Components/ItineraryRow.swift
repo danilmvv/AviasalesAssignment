@@ -33,5 +33,8 @@ struct ItineraryRow: View {
 }
 
 #Preview {
-    ItineraryRow(city: City(iata: "MOW", name: "Москва"), dateString: "2023-09-03 20:25")
+    ZStack {
+        ItineraryRow(city: City(iata: "MOW", name: "Москва"), dateString: "2023-09-03 20:25")
+            .padding()
+    }
 }

@@ -39,4 +39,16 @@ class FlightListViewModel: ObservableObject {
         
         isLoading = false
     }
+    
+    func getFlightDetails(flight: FlightResult) -> FlightDetails {
+        return FlightDetails(
+            id: flight.id,
+            departure: flight.departure,
+            arrival: flight.arrival,
+            price: flight.price,
+            airline: flight.airline,
+            itinerary: [origin, destination],
+            passengerCount: passengerCount
+        )
+    }
 }

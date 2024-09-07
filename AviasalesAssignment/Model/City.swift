@@ -1,6 +1,6 @@
 import Foundation
 
-struct City: Codable {
+struct City: Codable, Hashable {
     let iata: String
     let name: String
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Price: Codable {
+struct Price: Codable, Hashable {
     let currency: String
     let value: Double
 }

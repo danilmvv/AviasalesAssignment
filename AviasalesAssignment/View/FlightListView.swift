@@ -15,26 +15,25 @@ struct FlightListView: View {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(viewModel.flights, id: \.id) { flight in
-                            FlightCard(
-                                flight: flight,
-                                itinerary: [
-                                    viewModel.origin,
-                                    viewModel.destination
-                                ],
-                                isCheapest: flight.id == viewModel.cheapestFlightID
-                            )
-                            .padding(.horizontal, 16)
-                        }
-                        .overlay {
-                            if viewModel.isLoading {
-                                ProgressView("Загрузка...")
-                            } else if let errorMessage = viewModel.errorMessage {
-                                Text(errorMessage)
-                            }
+                            NavigationLink(value: viewModel.getFlightDetails(flight: flight), label: {
+                                FlightCard(
+                                    flight: flight,
+                                    itinerary: [
+                                        viewModel.origin,
+                                        viewModel.destination
+                                    ],
+                                    isCheapest: flight.id == viewModel.cheapestFlightID
+                                )
+                                .padding(.horizontal, 16)
+                            })
+                            .buttonStyle(.plain)
                         }
                     }
                     .padding(.vertical, 16)
                 }
+            }
+            .navigationDestination(for: FlightDetails.self) { flight in
+                FlightDetailView(flight: flight)
             }
             .navigationTitle("Все билеты")
             .navigationBarTitleDisplayMode(.inline)
