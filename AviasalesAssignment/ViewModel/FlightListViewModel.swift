@@ -21,6 +21,8 @@ class FlightListViewModel: ObservableObject {
         
         let endpoint = FlightSearchEndpoint(origin: origin, destination: destination)
         
+        AppLogger.data.info("Fetching Flights")
+        
         do {
             let response = try await networkManager.request(endpoint, responseType: SearchResponse.self)
             
@@ -34,11 +36,13 @@ class FlightListViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
         
+        AppLogger.data.info("Fetched \(flights.count) flights")
+        
         isLoading = false
     }
     
     func getFlightDetails(flight: FlightResult) -> FlightDetails {
-        return FlightDetails(
+        let details = FlightDetails(
             id: flight.id,
             departure: flight.departure,
             arrival: flight.arrival,
@@ -47,5 +51,7 @@ class FlightListViewModel: ObservableObject {
             itinerary: [origin, destination],
             passengerCount: passengerCount
         )
+        
+        return details
     }
 }

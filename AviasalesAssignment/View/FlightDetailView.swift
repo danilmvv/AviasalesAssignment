@@ -9,6 +9,8 @@ struct FlightDetailView: View {
                 flight: flight
             )
         )
+        
+        AppLogger.view.info("Opened \(flight.airline) flight \(flight.id)")
     }
     
     var body: some View {
