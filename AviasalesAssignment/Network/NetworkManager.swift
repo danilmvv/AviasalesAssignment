@@ -13,8 +13,6 @@ final class NetworkManager {
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
-        print("Data: \(String(data: data, encoding: String.Encoding.utf8)!)")
-        
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.unknown
         }

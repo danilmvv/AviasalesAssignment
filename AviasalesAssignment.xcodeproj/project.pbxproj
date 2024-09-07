@@ -24,6 +24,9 @@
 		3C6CEFC12C8B294D00EB0730 /* FlightListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFC02C8B294D00EB0730 /* FlightListViewModel.swift */; };
 		3C6CEFCA2C8B694D00EB0730 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFC92C8B694D00EB0730 /* Date+Formatting.swift */; };
 		3C6CEFCE2C8B74E300EB0730 /* ItineraryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */; };
+		3C6CEFD62C8BB4E400EB0730 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD52C8BB4E400EB0730 /* AppColor.swift */; };
+		3C6CEFD82C8BB52B00EB0730 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD72C8BB52B00EB0730 /* AppFont.swift */; };
+		3C6CEFDA2C8BB77600EB0730 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CEFD92C8BB77600EB0730 /* AppIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		3C6CEFC42C8B42A000EB0730 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3C6CEFC92C8B694D00EB0730 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		3C6CEFCD2C8B74E200EB0730 /* ItineraryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryRow.swift; sourceTree = "<group>"; };
+		3C6CEFD52C8BB4E400EB0730 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		3C6CEFD72C8BB52B00EB0730 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		3C6CEFD92C8BB77600EB0730 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,9 @@
 		3C6CEFBA2C8B249800EB0730 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3C6CEFD52C8BB4E400EB0730 /* AppColor.swift */,
+				3C6CEFD72C8BB52B00EB0730 /* AppFont.swift */,
+				3C6CEFD92C8BB77600EB0730 /* AppIcon.swift */,
 				3C6CEF962C8A049900EB0730 /* Assets.xcassets */,
 				3C6CEF982C8A049900EB0730 /* Preview Content */,
 			);
@@ -244,6 +253,7 @@
 			files = (
 				3C6CEFAE2C8B1F7F00EB0730 /* SearchResponse.swift in Sources */,
 				3C6CEFAB2C8B137300EB0730 /* NetworkManager.swift in Sources */,
+				3C6CEFDA2C8BB77600EB0730 /* AppIcon.swift in Sources */,
 				3C6CEFA72C8B116600EB0730 /* HTTPMethod.swift in Sources */,
 				3C6CEFBF2C8B293C00EB0730 /* FlightCard.swift in Sources */,
 				3C6CEFC12C8B294D00EB0730 /* FlightListViewModel.swift in Sources */,
@@ -251,9 +261,11 @@
 				3C6CEFB42C8B20FB00EB0730 /* Price.swift in Sources */,
 				3C6CEFA52C8B108100EB0730 /* NetworkError.swift in Sources */,
 				3C6CEFCA2C8B694D00EB0730 /* Date+Formatting.swift in Sources */,
+				3C6CEFD62C8BB4E400EB0730 /* AppColor.swift in Sources */,
 				3C6CEFCE2C8B74E300EB0730 /* ItineraryRow.swift in Sources */,
 				3C6CEFB22C8B20F200EB0730 /* FlightResult.swift in Sources */,
 				3C6CEFBC2C8B282A00EB0730 /* FlightListView.swift in Sources */,
+				3C6CEFD82C8BB52B00EB0730 /* AppFont.swift in Sources */,
 				3C6CEF932C8A049600EB0730 /* AviasalesAssignmentApp.swift in Sources */,
 				3C6CEFB02C8B20E200EB0730 /* City.swift in Sources */,
 				3C6CEFA92C8B11AE00EB0730 /* Endpoint.swift in Sources */,

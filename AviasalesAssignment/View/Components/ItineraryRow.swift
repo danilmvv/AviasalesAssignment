@@ -15,7 +15,7 @@ struct ItineraryRow: View {
                     Text(date.timeOnly)
                 }
             }
-            .fontWeight(.bold)
+            .font(AppFont.headline)
             
             HStack {
                 Text(city.iata)
@@ -26,8 +26,8 @@ struct ItineraryRow: View {
                     Text(date.dayWeekday)
                 }
             }
-            .font(.subheadline)
-            .foregroundColor(.gray)
+            .font(AppFont.body)
+            .foregroundColor(AppColor.textSecondary)
         }
     }
 }

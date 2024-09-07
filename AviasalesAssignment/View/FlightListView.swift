@@ -10,8 +10,10 @@ struct FlightListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                AppColor.appBackground.ignoresSafeArea()
+                
                 ScrollView {
-                    VStack(spacing: 12) {
+                    LazyVStack(spacing: 12) {
                         ForEach(viewModel.flights, id: \.id) { flight in
                             FlightCard(
                                 flight: flight,
@@ -26,20 +28,26 @@ struct FlightListView: View {
                             if viewModel.isLoading {
                                 ProgressView("Загрузка...")
                             } else if let errorMessage = viewModel.errorMessage {
-                                Text(errorMessage).foregroundColor(.red)
+                                Text(errorMessage)
                             }
                         }
                     }
+                    .padding(.vertical, 16)
                 }
             }
             .navigationTitle("Все билеты")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    if let departureDate = Date(from: viewModel.departureDate) {
-                        VStack {
-                            Text("\(viewModel.origin.name) – \(viewModel.destination.name)")
+                    VStack {
+                        Text("\(viewModel.origin.name) — \(viewModel.destination.name)")
+                            .font(AppFont.headline)
+                            .foregroundStyle(AppColor.textPrimary)
+                        if let departureDate = Date(from: viewModel.departureDate) {
                             Text("\(departureDate.dayMonth), \(viewModel.passengerCount) чел")
+                                .font(AppFont.subheadline)
+                                .foregroundStyle(AppColor.textSecondary)
+                                .transition(.scale)
                         }
                     }
                 }
