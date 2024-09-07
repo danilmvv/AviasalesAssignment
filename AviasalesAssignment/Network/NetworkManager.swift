@@ -1,4 +1,16 @@
 import Foundation
+import Dependencies
+
+private enum NetworkManagerKey: DependencyKey {
+    static let liveValue = NetworkManager(baseUrl: URL(string: "https://nu.vsepoka.ru/api")!)
+}
+
+extension DependencyValues {
+    var networkManager: NetworkManager {
+        get { self[NetworkManagerKey.self] }
+        set { self[NetworkManagerKey.self] = newValue }
+    }
+}
 
 final class NetworkManager {
     private let baseUrl: URL

@@ -1,4 +1,5 @@
 import Foundation
+import Dependencies
 
 @MainActor
 class FlightListViewModel: ObservableObject {
@@ -12,11 +13,7 @@ class FlightListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
-    private let networkManager: NetworkManager
-    
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
-    }
+    @Dependency(\.networkManager) private var networkManager
     
     func fetchFlights(origin: String = "MOW", destination: String = "LED") async {
         isLoading = true

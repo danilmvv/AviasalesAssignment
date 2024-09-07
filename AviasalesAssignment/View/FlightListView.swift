@@ -1,26 +1,22 @@
 import SwiftUI
 
 struct FlightListView: View {
-    @StateObject private var viewModel: FlightListViewModel
-    
-    init(networkManager: NetworkManager) {
-        _viewModel = StateObject(wrappedValue: FlightListViewModel(networkManager: networkManager))
-    }
+    @StateObject private var viewModel = FlightListViewModel()
     
     var body: some View {
         NavigationStack {
             ZStack {
                 AppColor.appBackground.ignoresSafeArea()
                 
-                if viewModel.isLoading && viewModel.flights.isEmpty {
+                flightList
+                
+                if viewModel.isLoading {
                     loader
                 }
                 
                 if viewModel.errorMessage != nil {
                     retry
                 }
-                
-                flightList
             }
             .navigationTitle("Все билеты")
             .navigationBarTitleDisplayMode(.inline)
@@ -107,10 +103,5 @@ struct FlightListView: View {
 }
 
 #Preview {
-    FlightListView(networkManager: NetworkManager(baseUrl: URL(string: "https://nu.vsepoka.ru/api")!))
-}
-
-// Ошибка
-#Preview {
-    FlightListView(networkManager: NetworkManager(baseUrl: URL(string: "https://nu.vsepoka.ru/")!))
+    FlightListView()
 }

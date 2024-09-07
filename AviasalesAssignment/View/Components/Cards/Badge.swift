@@ -9,7 +9,7 @@ struct Badge: View {
         Text(text)
             .font(AppFont.badge)
             .padding(.horizontal, 8)
-            .padding(.vertical, 4)
+            .padding(.vertical, 2)
             .foregroundStyle(textColor)
             .background(backgroundColor)
             .clipShape(Capsule())
